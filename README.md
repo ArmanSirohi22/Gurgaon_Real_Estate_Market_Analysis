@@ -1,53 +1,38 @@
-Gurgaon Real Estate Market Analysis
+# Gurgaon Real Estate Market Analysis
 
-📊 Project Overview
+## 📊 Project Overview
 
-This project analyzes the Gurgaon/Gurugram real estate market using Python and exploratory data analysis (EDA).
+This project analyzes the Gurgaon/Gurugram real estate market using Python and exploratory data analysis (EDA). The analysis focuses on property prices, area, price per square foot, locality, BHK configuration, property type, builder/company, RERA approval, and construction status.
 
-The analysis focuses on property prices, area, price per square foot, locality, BHK configuration, property type, builder/company, RERA approval, and construction status.
+The dataset contains **19,515 property records** across **12 columns**.
 
-The dataset contains 19,515 property records and 12 columns.
-
-🎯 Business Questions
+## 🎯 Business Questions
 
 The analysis answers the following questions:
 
-Which is the costliest flat in the dataset?
+1. Which is the costliest flat in the dataset?
+2. Which locality has the highest average property price?
+3. Which locality has the highest average rate per square foot?
+4. Do ready-to-move properties cost more than under-construction properties?
+5. Do RERA-approved properties command a price premium?
+6. How does property area impact property price?
+7. Which BHK configuration is the most expensive on average?
+8. Which property type has the highest average price?
+9. Do certain builders or companies consistently price properties higher?
+10. Are larger homes always more expensive per square foot?
 
-Which locality has the highest average property price?
+## 🛠️ Tools & Technologies
 
-Which locality has the highest average rate per square foot?
+- **Python**
+- **Pandas** – data loading, cleaning, and analysis
+- **Matplotlib** – visualization
+- **Seaborn** – visualization
+- **VS Code** – development environment
+- **Git & GitHub** – version control and project sharing
 
-Do ready-to-move properties cost more than under-construction properties?
+## 🔄 Project Workflow
 
-Do RERA-approved properties command a price premium?
-
-How does property area impact property price?
-
-Which BHK configuration is the most expensive on average?
-
-Which property type has the highest average price?
-
-Do certain builders or companies consistently price properties higher?
-
-Are larger homes always more expensive per square foot?
-
-🛠️ Tools & Technologies
-
-Python
-
-Pandas – data loading, cleaning and analysis
-
-Matplotlib – visualization
-
-Seaborn – visualization
-
-Jupyter Notebook / VS Code – development environment
-
-Git & GitHub – version control and project sharing
-
-🔄 Project Workflow
-
+```
 Raw Real Estate Data
         ↓
 Data Loading
@@ -67,50 +52,44 @@ Business Questions
 Visual Analysis
         ↓
 Real Estate Market Insights
+```
 
-🧹 Data Cleaning
+## 🧹 Data Cleaning
 
 The Python analysis includes:
 
-Standardizing column names
+- Standardizing column names
+- Removing duplicate records
+- Converting price values into numeric format
+- Cleaning area values
+- Cleaning rate-per-square-foot values
+- Standardizing categorical text
+- Converting RERA approval into a Boolean field
+- Removing duplicates again after cleaning
 
-Removing duplicate records
-
-Converting price values into numeric format
-
-Cleaning area values
-
-Cleaning rate-per-square-foot values
-
-Standardizing categorical text
-
-Converting RERA approval into a Boolean field
-
-Removing duplicates again after cleaning
-
-📈 Analysis & Visualization
+## 📈 Analysis & Visualization
 
 The project uses:
 
-GroupBy analysis for locality, BHK, property type and builder/company comparisons
+- GroupBy analysis for locality, BHK, property type, and builder/company comparisons
+- Average price comparisons
+- Price-per-square-foot comparisons
+- Correlation analysis between area and price
+- Scatter plots to examine the relationship between area and rate per square foot
 
-Average price comparisons
+**Area vs. Rate per Sqft:**
 
-Price-per-square-foot comparisons
+![Area vs Rate per Sqft](visualizations/area_vs_rate_per_sqft.png)
 
-Correlation analysis between area and price
+*Rate per sqft tends to fall as area increases — smaller units generally command a higher price per square foot than large plots.*
 
-Scatter plots to examine the relationship between area and rate per square foot
+## 📁 Repository Structure
 
-📁 Suggested Repository Structure
-
+```
 Gurgaon_Real_Estate_Market_Analysis/
 │
 ├── data/
 │   └── data of gurugram real Estate.csv
-│
-├── notebooks/
-│   └── Gurgaon_Real_Estate_Analysis.ipynb
 │
 ├── src/
 │   └── gurgaon_real_estate_analysis.py
@@ -122,56 +101,63 @@ Gurgaon_Real_Estate_Market_Analysis/
 ├── requirements.txt
 ├── .gitignore
 └── LICENSE
+```
 
-If the dataset is from a third party, verify that you are allowed to redistribute it before committing it to a public repository. If redistribution is not allowed, keep the dataset out of GitHub and document where it came from.
+> **Note:** The dataset itself is excluded from version control via `.gitignore`. Add your own copy to the `data/` folder before running the script (see [Data Note](#️-data-note) below).
 
-▶️ How to Run
+## ▶️ How to Run
 
-1. Clone the repository
+**1. Clone the repository**
 
+```bash
 git clone https://github.com/ArmanSirohi22/Gurgaon_Real_Estate_Market_Analysis.git
 cd Gurgaon_Real_Estate_Market_Analysis
+```
 
-2. Install dependencies
+**2. Install dependencies**
 
+```bash
 pip install -r requirements.txt
+```
 
-3. Place the dataset
+**3. Place the dataset**
 
-Put the dataset inside the data/ folder.
+Put the dataset inside the `data/` folder. Make sure the filename matches the filename used in the script, or update the `pd.read_csv()` path in `src/gurgaon_real_estate_analysis.py` accordingly.
 
-Make sure the filename matches the filename used in the Python script, or update the pd.read_csv() path accordingly.
+**4. Run the analysis**
 
-4. Run the analysis
-
+```bash
 python src/gurgaon_real_estate_analysis.py
+```
 
-💡 Key Skills Demonstrated
+This prints the answers to each business question to the console and saves a scatter plot to `visualizations/area_vs_rate_per_sqft.png`.
+
+## 💡 Key Skills Demonstrated
 
 This project demonstrates practical skills in:
 
-Data cleaning
+- Data cleaning
+- Exploratory Data Analysis (EDA)
+- Data transformation
+- Feature standardization
+- GroupBy and aggregation
+- Correlation analysis
+- Data visualization
+- Business-question-driven analysis
+- Python-based data analysis
 
-Exploratory Data Analysis (EDA)
+## ⚠️ Data Note
 
-Data transformation
+If the dataset is from a third party, verify that redistribution is permitted before committing it to a public repository. If redistribution is not allowed, keep the dataset out of GitHub (it is already excluded via `.gitignore`) and document the source here instead:
 
-Feature standardization
+- **Source:** *(add source URL or description here)*
+- **Usage restrictions:** *(note any restrictions here, if applicable)*
 
-GroupBy and aggregation
+## 📜 License
 
-Correlation analysis
+This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
 
-Data visualization
+## 👤 Author
 
-Business-question-driven analysis
-
-Python-based data analysis
-
-⚠️ Data Note
-
-The repository should clearly mention the original source of the dataset and any applicable usage restrictions. Add the source URL or source description here before publishing the repository if available.
-
-👤 Author
-Arman Sirohi
-GitHub: ArmanSirohi22
+**Arman Sirohi**
+GitHub: [ArmanSirohi22](https://github.com/ArmanSirohi22)
